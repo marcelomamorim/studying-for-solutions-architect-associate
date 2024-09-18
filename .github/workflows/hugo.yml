@@ -1,11 +1,11 @@
-# Sample workflow for building and deploying a Hugo site to GitHub Pages
+# Workflow for building and deploying a Hugo site with Doks theme to GitHub Pages
 name: Deploy Hugo site to Pages
 
 on:
   push:
-    branches: ["main"]
-
-  workflow_dispatch:
+    branches:
+      - "main"  # Triggers deployment on push to the main branch
+  workflow_dispatch:  # Allows manual triggering of the workflow
 
 permissions:
   contents: read
@@ -26,38 +26,43 @@ jobs:
     env:
       HUGO_VERSION: 0.128.0
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive  # Ensures submodules are cloned if your Doks theme uses one
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.128.0'
-          extended: true
+          extended: true  # Ensures extended version of Hugo for SASS support
 
       - name: Install Dart Sass
-        run: npm install -g sass
-
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          submodules: recursive
+        run: npm install -g sass  # Installs Dart Sass using npm
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
       - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+        run: |
+          [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true  # Installs dependencies if package-lock.json is present
 
-      - name: Build with Hugo
+      - name: Clean old build files
+        run: |
+          rm -rf public/*  # Cleans out old files before building new ones
+
+      - name: Build Hugo Site
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
-          hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+          hugo --minify --baseURL "https://marcelomamorim.github.io/studying-for-solutions-architect-associate/"  # Sets explicit base URL
 
-      - name: Upload artifact
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./public  # Path to the public folder containing the built site
 
   deploy:
     environment:
