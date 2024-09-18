@@ -33,11 +33,13 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      - name: Install Node.js and dependencies
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
-      - run: npm ci
+
+      - name: Install Node.js dependencies
+        run: npm install  # Changed from 'npm ci' to 'npm install'
 
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v2
