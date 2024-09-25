@@ -1,7 +1,7 @@
 ---
-title: "Welcome to Doks"
+title: "Estudando para SAA-C03"
 description: ""
-lead: "Congrats on setting up a new Doks project!"
+lead: "Conteúdo de apoio ao estudo para a SAA-C03"
 date: 2023-09-07T16:33:54+02:00
 lastmod: 2023-09-07T16:33:54+02:00
 draft: false
