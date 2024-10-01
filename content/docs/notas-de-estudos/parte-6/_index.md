@@ -16,4 +16,4 @@ seo:
 
 ## Parte 6 - Anotações de Estudos
 
-<iframe src="../../pdfs/Semana7.pdf" frameborder="0" width="800" height="510"></iframe>
+<iframe src="../../pdfs/converted/Semana7.pdf" frameborder="0" width="800" height="510"></iframe>
