@@ -11,3 +11,5 @@ weight: 800
 # Declaração de tarefa 3.2
 
 Intro a esta parte da doc
+
+<iframe src="../../../pdfs/Semana6.pdf" frameborder="0" width="800" height="510"></iframe>
