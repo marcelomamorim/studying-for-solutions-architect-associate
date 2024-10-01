@@ -16,4 +16,4 @@ seo:
 
 ## Etapa 1 - Material de Apoio
 
-<iframe src="../../pdfs/converted/Semana2.pdf" frameborder="0" width="800" height="510"></iframe>
+<iframe src="../../pdfs/Semana2.pdf" frameborder="0" width="800" height="510"></iframe>

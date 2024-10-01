@@ -14,6 +14,6 @@ seo:
   noindex: false # false (default) or true
 ---
 
-## Etapa 1 - Material de Apoio
+## Etapa 6 - Material de Apoio
 
-<iframe src="../../pdfs/converted/Semana7.pdf" frameborder="0" width="800" height="510"></iframe>
+<iframe src="../../pdfs/Semana7.pdf" frameborder="0" width="800" height="510"></iframe>
